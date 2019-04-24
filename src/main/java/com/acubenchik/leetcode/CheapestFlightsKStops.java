@@ -19,98 +19,57 @@ public class CheapestFlightsKStops {
     }
 
     public int findCheapestPrice(int n, int[][] flights, int src, int dst, int K) {
-
-        Map<Integer, Node> graph = transform(n, flights, src);
-        int result = dijkstra(src, dst, K, graph);
+        int result = dijkstra(n, src, dst,  flights, K);
         return result;
     }
 
-    private int dijkstra(int from, int to, int numOfStops, Map<Integer, Node> graph) {
-        PriorityQueue<Node> queue = new PriorityQueue<>(Comparator.comparingInt(a -> a.distanceToSource));
-        queue.add(graph.get(from));
+    private int dijkstra(int N, int from, int to, int[][] times, int numOfStops) {
+        Map<Integer, List<int[]>> graph = new HashMap();
+        for (int[] edge: times) {
+            if (!graph.containsKey(edge[0]))
+                graph.put(edge[0], new ArrayList<int[]>());
+            graph.get(edge[0]).add(new int[]{edge[1], edge[2], 0});
+        }
+        boolean[] visited = new boolean[N];
+        int [] allDistances = new int[N];
+//        int [] numOfStopsForNode = new int[N];
+        for(int i = 0; i < allDistances.length; i++) {
+            allDistances[i] = Integer.MAX_VALUE;
+        }
+        PriorityQueue<int[]> queue = new PriorityQueue<>((a,b) -> a[1]-b[1]);
+        queue.add(new int[]{from, 0, 0});
         while(!queue.isEmpty()) {
-            Node currentNode = queue.poll();
-            if(currentNode.number == to) {
-                return currentNode.distanceToSource;
+            int[] currentNodeInfo = queue.poll();
+            int currentDistance = currentNodeInfo[1];
+            int currentNodeNumber = currentNodeInfo[0];
+            int currentNumOfStopForNode = currentNodeInfo[2];
+
+            if(currentNodeNumber == to) {
+                allDistances[currentNodeNumber] = currentDistance;
+                return allDistances[currentNodeNumber];
             }
-            if(currentNode.currentStops <= numOfStops) {
+            visited[currentNodeNumber] = true;
 
-                for (Edge e : currentNode.childs) {
-                    Node child = graph.get(e.to);
-                    Node cloneChild = new Node();
-                    cloneChild.number = child.number;
-                    cloneChild.currentStops = child.currentStops;
-                    cloneChild.distanceToSource = child.distanceToSource;
-                    cloneChild.childs = child.childs;
+            allDistances[currentNodeNumber] = currentDistance;
 
-                    int alternativDistance = currentNode.distanceToSource + e.weight;
+            if(currentNumOfStopForNode <=numOfStops) {
+                if (graph.containsKey(currentNodeNumber)) {
+                    for (int[] edge : graph.get(currentNodeNumber)) {
 
-                    if (alternativDistance < cloneChild.distanceToSource) {
-                        cloneChild.distanceToSource = alternativDistance;
+                            int alternativeDistance = currentDistance + edge[1];
+                            if (alternativeDistance < allDistances[edge[0]]) {
+                                queue.offer(new int[]{edge[0], alternativeDistance, currentNumOfStopForNode+1});
+                            } else {
+                                queue.offer(new int[]{edge[0], allDistances[edge[0]], currentNumOfStopForNode+1});
+                            }
+
+
                     }
-
-                    cloneChild.currentStops = currentNode.currentStops + 1;
-                    queue.offer(cloneChild);
                 }
             }
         }
+
         return -1;
-    }
-
-    private Map<Integer, Node> transform(int cities, int [][] flights, int source) {
-        Map<Integer, Node> result = new HashMap<>();
-        //other is integer max
-        for(int[] el: flights) {
-            if(result.get(el[1]) == null) {
-                Node n = new Node();
-                n.number = el[1];
-                if(el[1] == source) {
-                    n.distanceToSource = 0;
-                } else {
-                    n.distanceToSource = Integer.MAX_VALUE;
-                }
-                n.childs = new ArrayList<>();
-                result.put(el[1], n);
-            }
-          if(result.get(el[0]) == null) {
-              Node node = new Node();
-              node.number = el[0];
-              if(el[0] == source) {
-                  node.distanceToSource = 0;
-              } else {
-                  node.distanceToSource = Integer.MAX_VALUE;
-              }
-              node.childs = new ArrayList<>();
-              Edge e = new Edge();
-              e.weight = el[2];
-              e.from = el[0];
-              e.to = el[1];
-              node.childs.add(e);
-              result.put(el[0], node);
-          } else {
-              Node node = result.get(el[0]);
-              Edge e = new Edge();
-              e.weight = el[2];
-              e.from = el[0];
-              e.to = el[1];
-              node.childs.add(e);
-          }
-        }
-
-        return result;
-    }
-    class Node {
-        int number;
-        int distanceToSource;
-        int currentStops;
-        List<Edge> childs;
-    }
-
-    class Edge {
-        int weight;
-       int from;
-       int to;
-
     }
 
 }
