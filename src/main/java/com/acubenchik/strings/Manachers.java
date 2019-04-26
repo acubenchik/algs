@@ -1,5 +1,7 @@
 package com.acubenchik.strings;
 
+
+//https://www.quora.com/Where-can-I-find-the-easy-explanation-of-Manachers-algorithms-to-find-the-longest-palindrome-substring
 public class Manachers {
 
     public static void main(String[] args) {
