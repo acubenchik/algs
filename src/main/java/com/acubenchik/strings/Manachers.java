@@ -3,7 +3,7 @@ package com.acubenchik.strings;
 public class Manachers {
 
     public static void main(String[] args) {
-        String res = new Manachers().longestPalindrome("adcb");
+        String res = new Manachers().longestPalindrome("aabb");
         System.out.println(res);
     }
 
