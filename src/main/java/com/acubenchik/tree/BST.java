@@ -10,14 +10,49 @@ public class BST {
         bst.add(2);
         bst.add(4);
 //        bst.preorder(bst.root);
-//        bst.inorder(bst.root);
-        bst.postOrder(bst.root);
+        bst.inorder(bst.root);
+//        bst.postOrder(bst.root);
+        bst.delete(5);
 
     }
     Node root;
 
     public void add(int key){
         this.root = insert(this.root, key);
+    }
+
+    private int maxKeyInLeftSubtree(Node node) {
+        while(node.right!=null) {
+            return maxKeyInLeftSubtree(node.right);
+        }
+        return node.key;
+    }
+
+    public void delete(int key) {
+        deleteKey(key, this.root);
+    }
+
+    private Node deleteKey(int key, Node currentNode) {
+        if(key == currentNode.key) {
+            if(currentNode.right!= null && currentNode.left!=null) {
+                int newKey = maxKeyInLeftSubtree(currentNode.left);
+                currentNode.key = newKey;
+                currentNode.left = deleteKey(newKey, currentNode.left);
+
+
+            } else if(currentNode.right== null && currentNode.left==null) {
+                return null;
+            } else if (currentNode.right != null  && currentNode.left==null) {
+                return  currentNode.right;
+            } else if (currentNode.right == null  && currentNode.left!=null) {
+                return currentNode.left;
+            }
+        } else if (key < currentNode.key) {
+            currentNode.left =  deleteKey(key, currentNode.left);
+        } else {
+            currentNode.right = deleteKey(key, currentNode.right);
+        }
+        return currentNode;
     }
 
     public void preorder(Node root){
