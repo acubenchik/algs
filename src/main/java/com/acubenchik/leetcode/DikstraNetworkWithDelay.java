@@ -2,11 +2,11 @@ package com.acubenchik.leetcode;
 
 import java.util.*;
 
-public class NetworkWithDelay {
+public class DikstraNetworkWithDelay {
 
     public static void main(String[] args) {
 
-        new NetworkWithDelay().networkDelayTime(new int[][]{{1,2,1}, {2,3,2}, {1,3,4}}, 3, 1);
+        new DikstraNetworkWithDelay().networkDelayTime(new int[][]{{1,2,1}, {2,3,2}, {1,3,4}}, 3, 1);
     }
 
     public int networkDelayTime(int[][] times, int N, int K) {
