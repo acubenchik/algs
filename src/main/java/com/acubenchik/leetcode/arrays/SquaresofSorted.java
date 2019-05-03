@@ -1,4 +1,4 @@
-package com.acubenchik.leetcode;
+package com.acubenchik.leetcode.arrays;
 
 //https://leetcode.com/problems/squares-of-a-sorted-array/
 public class SquaresofSorted {
