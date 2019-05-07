@@ -3,7 +3,7 @@ package com.acubenchik.strings;
 public class KMP {
 
     public static void main(String[] args) {
-        new KMP().kmpSearch("catacb#bcatac", "ababadababaa");
+        new KMP().kmpSearch("aabaaa", "aabaabaaaa");
     }
 
 
