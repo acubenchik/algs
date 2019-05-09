@@ -17,7 +17,7 @@ public class BoyerMoore {
         int move;
         for (int i = 0; i < text.length() - pattern.length(); i+=move) {
             move = 0;
-            for (int j = 0; j < pattern.length(); j++) {
+            for (int j = pattern.length()-1; j >=0; j--) {
                 if(pattern.charAt(j) != text.charAt(i+j)) {
                     move = j - rightMostPositions[text.charAt(i+j)];
                     if(move < 1) move = 1;
