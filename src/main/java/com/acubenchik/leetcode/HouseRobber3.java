@@ -1,5 +1,7 @@
 package com.acubenchik.leetcode;
 
+import com.acubenchik.tree.TreeNode;
+
 public class HouseRobber3 {
 
     public int rob(TreeNode root) {

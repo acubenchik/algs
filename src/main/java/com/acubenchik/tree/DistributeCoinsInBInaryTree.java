@@ -1,4 +1,5 @@
-package com.acubenchik.leetcode;
+package com.acubenchik.tree;
+
 //https://leetcode.com/problems/distribute-coins-in-binary-tree/
 public class DistributeCoinsInBInaryTree {
     private int answer = 0;

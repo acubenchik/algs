@@ -1,6 +1,7 @@
-package com.acubenchik.leetcode;
+package com.acubenchik.leetcode.dynamic;
 
 
+//198
 //https://leetcode.com/problems/house-robber/
 public class HouseRobber {
 
@@ -11,7 +12,6 @@ public class HouseRobber {
         for(int i = 2; i < nums.length; i ++) {
             result[i] = Math.max(nums[i]+result[i-2], result[i-1]);
         }
-        //3 2 1 5 1
         return result[result.length - 1];
     }
 }

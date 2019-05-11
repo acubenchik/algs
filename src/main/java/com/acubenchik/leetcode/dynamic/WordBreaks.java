@@ -1,4 +1,4 @@
-package com.acubenchik.leetcode.strings;
+package com.acubenchik.leetcode.dynamic;
 
 
 import java.util.Arrays;

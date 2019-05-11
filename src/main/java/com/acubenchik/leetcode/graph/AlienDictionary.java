@@ -1,9 +1,10 @@
-package com.acubenchik.leetcode;
+package com.acubenchik.leetcode.graph;
 
 
 import java.util.*;
 
 //https://www.geeksforgeeks.org/given-sorted-dictionary-find-precedence-characters/
+//Just build a graph and get a topological sort
 public class AlienDictionary {
 
     public static void main(String[] args) {

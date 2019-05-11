@@ -1,7 +1,4 @@
-package com.acubenchik.leetcode;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.acubenchik.leetcode.graph;
 
 //https://leetcode.com/problems/is-graph-bipartite/
 public class IsBipartite {
