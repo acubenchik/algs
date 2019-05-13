@@ -1,6 +1,5 @@
-package com.acubenchik.leetcode;
+package com.acubenchik.leetcode.arrays;
 
-import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 

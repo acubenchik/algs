@@ -1,5 +1,7 @@
-package com.acubenchik.leetcode;
+package com.acubenchik.leetcode.arrays;
 
+
+//https://leetcode.com/problems/maximum-length-of-repeated-subarray/
 public class MaximumLengthOfRepeatedSubarray {
 
     public int findLength(int[] A, int[] B) {
