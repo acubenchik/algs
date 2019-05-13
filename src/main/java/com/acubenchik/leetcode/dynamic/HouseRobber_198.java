@@ -3,7 +3,7 @@ package com.acubenchik.leetcode.dynamic;
 
 //198
 //https://leetcode.com/problems/house-robber/
-public class HouseRobber {
+public class HouseRobber_198 {
 
     public int rob(int[] nums) {
         int [] result = new int [nums.length];

@@ -1,7 +1,7 @@
 package com.acubenchik.leetcode.dynamic;
 
 //https://leetcode.com/problems/longest-increasing-path-in-a-matrix/
-public class LongestIncreasingPathInMatrix {
+public class LongestIncreasingPathInMatrix_329 {
 
     public int longestIncreasingPath(int[][] matrix) {
         if (matrix.length == 0 || matrix[0].length == 0) return 0;

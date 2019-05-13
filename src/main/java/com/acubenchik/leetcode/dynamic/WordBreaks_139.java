@@ -5,10 +5,10 @@ import java.util.Arrays;
 import java.util.List;
 
 //https://leetcode.com/problems/word-break/
-public class WordBreaks {
+public class WordBreaks_139 {
 
     public static void main(String[] args) {
-        boolean res = new WordBreaks().wordBreak("catndog", Arrays.asList("cat",  "n", "dog"));
+        boolean res = new WordBreaks_139().wordBreak("catndog", Arrays.asList("cat",  "n", "dog"));
         System.out.println(res);
     }
     public boolean wordBreak(String s, List<String> wordDict) {

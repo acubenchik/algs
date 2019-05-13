@@ -2,7 +2,7 @@ package com.acubenchik.leetcode.dynamic;
 
 //72
 //https://leetcode.com/problems/edit-distance/
-public class EditDistance {
+public class EditDistance_72 {
 
     //levenshtein
     public int minDistance(String word1, String word2) {

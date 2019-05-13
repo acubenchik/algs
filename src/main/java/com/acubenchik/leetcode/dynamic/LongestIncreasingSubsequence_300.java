@@ -2,9 +2,9 @@ package com.acubenchik.leetcode.dynamic;
 
 
 //https://leetcode.com/problems/longest-increasing-subsequence/
-public class LongestIncreasingSubsequence {
+public class LongestIncreasingSubsequence_300 {
     public static void main(String[] args) {
-        new LongestIncreasingSubsequence().lengthOfLIS(new int[]{1,3,5,4,7});
+        new LongestIncreasingSubsequence_300().lengthOfLIS(new int[]{1,3,5,4,7});
     }
 
     public int lengthOfLIS(int[] nums) {

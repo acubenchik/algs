@@ -1,10 +1,10 @@
 package com.acubenchik.leetcode.dynamic;
 
 //https://leetcode.com/problems/unique-paths-ii/
-public class NumberOfUniquePathsWithObstacles {
+public class NumberOfUniquePathsWithObstacles_63 {
 
     public static void main(String[] args) {
-        new NumberOfUniquePathsWithObstacles().uniquePathsWithObstacles(new int[][] {
+        new NumberOfUniquePathsWithObstacles_63().uniquePathsWithObstacles(new int[][] {
                 {0}
         });
     }

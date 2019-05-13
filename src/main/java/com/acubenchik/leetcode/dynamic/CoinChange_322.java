@@ -1,9 +1,9 @@
 package com.acubenchik.leetcode.dynamic;
 
 //https://leetcode.com/problems/coin-change/solution/
-public class CoinChange {
+public class CoinChange_322 {
     public static void main(String[] args) {
-        int res = new CoinChange().coinChange(new int[]{2}, 3);
+        int res = new CoinChange_322().coinChange(new int[]{2}, 3);
         System.out.println(res);
     }
 

@@ -2,10 +2,10 @@ package com.acubenchik.leetcode.dynamic;
 
 
 //https://leetcode.com/problems/minimum-falling-path-sum/
-public class MinimumFallingPathSum {
+public class MinimumFallingPathSum_931 {
 
     public static void main(String[] args) {
-        new MinimumFallingPathSum().minFallingPathSum(new int[][]{
+        new MinimumFallingPathSum_931().minFallingPathSum(new int[][]{
                 {-84, -36, 2},
                 {87, -79, 10},
                 {42, 10, 63}

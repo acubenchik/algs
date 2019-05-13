@@ -1,9 +1,9 @@
 package com.acubenchik.leetcode.dynamic;
 
 //      https://leetcode.com/problems/minimum-path-sum/
-public class MinimumPathSum {
+public class MinimumPathSum_64 {
     public static void main(String[] args) {
-        int result = new MinimumPathSum().minPathSum(new int[][]{
+        int result = new MinimumPathSum_64().minPathSum(new int[][]{
                 {1,3,1},
                 {1,0,1},
                 {4,2,1}

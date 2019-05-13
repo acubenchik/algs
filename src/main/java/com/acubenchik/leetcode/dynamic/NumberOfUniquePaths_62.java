@@ -1,9 +1,9 @@
 package com.acubenchik.leetcode.dynamic;
 
 //https://leetcode.com/problems/unique-paths/
-public class NumberOfUniquePaths {
+public class NumberOfUniquePaths_62 {
     public static void main(String[] args) {
-        new NumberOfUniquePaths().uniquePaths(3,2);
+        new NumberOfUniquePaths_62().uniquePaths(3,2);
     }
     public int uniquePaths(int m, int n) {
         if(m==1 && n==1) {

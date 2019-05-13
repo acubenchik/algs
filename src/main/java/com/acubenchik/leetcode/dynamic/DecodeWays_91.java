@@ -1,10 +1,10 @@
 package com.acubenchik.leetcode.dynamic;
 
 //https://leetcode.com/problems/decode-ways/
-public class DecodeWays {
+public class DecodeWays_91 {
 
     public static void main(String[] args) {
-        int res = new DecodeWays().numDecodings("210");
+        int res = new DecodeWays_91().numDecodings("210");
         System.out.println(res);
     }
     public int numDecodings(String s) {
