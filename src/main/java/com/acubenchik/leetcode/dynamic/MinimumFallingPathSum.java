@@ -1,4 +1,4 @@
-package com.acubenchik.leetcode;
+package com.acubenchik.leetcode.dynamic;
 
 
 //https://leetcode.com/problems/minimum-falling-path-sum/

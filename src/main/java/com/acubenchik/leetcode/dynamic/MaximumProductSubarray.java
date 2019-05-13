@@ -1,4 +1,4 @@
-package com.acubenchik.leetcode.arrays;
+package com.acubenchik.leetcode.dynamic;
 
 public class MaximumProductSubarray {
 
