@@ -1,9 +1,9 @@
-package com.acubenchik.leetcode;
+package com.acubenchik.leetcode.graph;
 
 import java.util.*;
 
 //https://leetcode.com/problems/course-schedule/
-public class Solution {
+public class CourseSchedule {
     public static void main(String[] args) {
         int[][] input = new int[][] {
                 {2, 0},

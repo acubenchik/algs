@@ -1,6 +1,4 @@
-package com.acubenchik.leetcode;
-
-import com.acubenchik.UnionFind;
+package com.acubenchik.leetcode.uf;
 
 public class Islands2 {
 

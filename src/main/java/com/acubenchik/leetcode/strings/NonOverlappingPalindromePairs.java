@@ -1,4 +1,4 @@
-package com.acubenchik.leetcode;
+package com.acubenchik.leetcode.strings;
 
 //https://www.geeksforgeeks.org/count-pairs-of-non-overlapping-palindromic-sub-strings-of-the-given-string/
 //https://asdfcoding.wordpress.com/2013/06/03/d-palindrome-pairs-codeforces/

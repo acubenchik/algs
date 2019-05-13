@@ -1,8 +1,9 @@
-package com.acubenchik.leetcode;
+package com.acubenchik.leetcode.arrays;
 
 import java.util.Arrays;
 import java.util.Comparator;
 
+//https://leetcode.com/problems/maximum-length-of-pair-chain/
 public class MaximumLengthofPairChain {
 
     public int findLongestChain(int[][] pairs) {

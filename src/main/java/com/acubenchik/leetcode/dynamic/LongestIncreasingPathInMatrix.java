@@ -1,4 +1,4 @@
-package com.acubenchik.leetcode;
+package com.acubenchik.leetcode.dynamic;
 
 //https://leetcode.com/problems/longest-increasing-path-in-a-matrix/
 public class LongestIncreasingPathInMatrix {

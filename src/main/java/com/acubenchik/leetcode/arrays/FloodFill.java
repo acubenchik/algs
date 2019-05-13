@@ -1,4 +1,4 @@
-package com.acubenchik.leetcode;
+package com.acubenchik.leetcode.arrays;
 
 //https://leetcode.com/problems/flood-fill/
 public class FloodFill {

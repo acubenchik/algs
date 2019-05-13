@@ -1,7 +1,6 @@
-package com.acubenchik.leetcode;
+package com.acubenchik.tree;
 
 
-import com.acubenchik.tree.TreeNode;
 
 //https://leetcode.com/problems/maximum-depth-of-binary-tree/
 public class MaxDepthOfThetree {
@@ -19,5 +18,10 @@ public class MaxDepthOfThetree {
         int currentHeight = Math.max(right, left);
         return currentHeight +1;
 
+    }
+
+    class TreeNode {
+        TreeNode right;
+        TreeNode left;
     }
 }

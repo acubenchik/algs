@@ -1,8 +1,10 @@
-package com.acubenchik.leetcode;
+package com.acubenchik.leetcode.uf;
 
 import java.util.HashSet;
 import java.util.Set;
 
+
+//https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/
 public class RemoveStones {
 
     public static void main(String[] args) {

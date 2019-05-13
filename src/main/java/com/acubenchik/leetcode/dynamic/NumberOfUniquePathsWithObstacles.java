@@ -1,5 +1,6 @@
-package com.acubenchik.leetcode;
+package com.acubenchik.leetcode.dynamic;
 
+//https://leetcode.com/problems/unique-paths-ii/
 public class NumberOfUniquePathsWithObstacles {
 
     public static void main(String[] args) {
@@ -9,10 +10,6 @@ public class NumberOfUniquePathsWithObstacles {
     }
 
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
-//        if(obstacleGrid.length == 1 && obstacleGrid[0].length == 1) {
-//            return 0;
-//        }
-
         for(int i =0; i < obstacleGrid.length; i ++) {
             for (int j = 0; j < obstacleGrid[0].length; j++) {
                 if(obstacleGrid[i][j] == 1) {
