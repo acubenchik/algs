@@ -1,6 +1,5 @@
 package com.acubenchik.leetcode;
 
-import com.acubenchik.tree.TreeNode;
 
 public class HouseRobber3 {
 
@@ -19,5 +18,10 @@ public class HouseRobber3 {
         profit[1] = node.val + left[0] + right[0];
         profit[0] = Math.max(Math.max(Math.max(left[1] + right[1], left[0] + right[1]),  left[1] + right[0]), left[0] + right[0]);
         return profit;
+    }
+    class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
     }
 }
