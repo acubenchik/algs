@@ -4,8 +4,7 @@ public class IsBalanced {
 
     private boolean isBalanced = true;
     public boolean isBalanced(TreeNode root) {
-    visit(root);
-
+        visit(root);
         return isBalanced;
     }
 
