@@ -19,56 +19,33 @@ public class CheapestFlightsKStops {
     }
 
     public int findCheapestPrice(int n, int[][] flights, int src, int dst, int K) {
-        int result = dijkstra(n, src, dst,  flights, K);
-        return result;
-    }
-
-    private int dijkstra(int N, int from, int to, int[][] times, int numOfStops) {
-        Map<Integer, List<int[]>> graph = new HashMap();
-        for (int[] edge: times) {
-            if (!graph.containsKey(edge[0]))
-                graph.put(edge[0], new ArrayList<int[]>());
-            graph.get(edge[0]).add(new int[]{edge[1], edge[2], 0});
+        Map<Integer, Map<Integer, Integer>> graph = new HashMap<>();
+        for(int[] flight: flights) {
+            int from = flight[0];
+            int to = flight[1];
+            int cost = flight[2];
+            graph.putIfAbsent(from, new HashMap<>());
+            graph.get(from).put(to, cost);
         }
-        boolean[] visited = new boolean[N];
-        int [] allDistances = new int[N];
-//        int [] numOfStopsForNode = new int[N];
-        for(int i = 0; i < allDistances.length; i++) {
-            allDistances[i] = Integer.MAX_VALUE;
-        }
-        PriorityQueue<int[]> queue = new PriorityQueue<>((a,b) -> a[1]-b[1]);
-        queue.add(new int[]{from, 0, 0});
+        PriorityQueue<int[]> queue = new PriorityQueue<>(Comparator.comparingInt(a -> a[1]));
+        queue.offer(new int[]{src, 0, 0});
         while(!queue.isEmpty()) {
-            int[] currentNodeInfo = queue.poll();
-            int currentDistance = currentNodeInfo[1];
-            int currentNodeNumber = currentNodeInfo[0];
-            int currentNumOfStopForNode = currentNodeInfo[2];
-
-            if(currentNodeNumber == to) {
-                allDistances[currentNodeNumber] = currentDistance;
-                return allDistances[currentNodeNumber];
+            int [] current = queue.poll();
+            int distance = current[2];
+            int city = current[0];
+            int cost = current[1];
+            if(distance > K + 1) continue;
+            if(city == dst) {
+                return cost;
             }
-            visited[currentNodeNumber] = true;
-
-            allDistances[currentNodeNumber] = currentDistance;
-
-            if(currentNumOfStopForNode <=numOfStops) {
-                if (graph.containsKey(currentNodeNumber)) {
-                    for (int[] edge : graph.get(currentNodeNumber)) {
-
-                            int alternativeDistance = currentDistance + edge[1];
-                            if (alternativeDistance < allDistances[edge[0]]) {
-                                queue.offer(new int[]{edge[0], alternativeDistance, currentNumOfStopForNode+1});
-                            } else {
-                                queue.offer(new int[]{edge[0], allDistances[edge[0]], currentNumOfStopForNode+1});
-                            }
-
-
-                    }
+            if (graph.containsKey(city)) {
+                Map<Integer, Integer> nexts = graph.get(city);
+                for (int nextCity : nexts.keySet()) {
+                    queue.offer(new int[]{ nextCity, cost + nexts.get(nextCity), distance + 1 });
                 }
             }
-        }
 
+        }
         return -1;
     }
 
