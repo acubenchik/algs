@@ -25,7 +25,7 @@ public class SkylineProblem_218 {
                 result.add(Arrays.asList( p.x, p.height));
             } else if (p.isEnd) {
                 queue.remove(p.height);
-                if(cu)
+//                if(cu)
             }
 
 
