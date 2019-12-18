@@ -10,7 +10,7 @@ import java.util.Set;
 public class LongestSubstringWithKMostDistinctCharacters {
 
     public static void main(String[] args) {
-        String res = new LongestSubstringWithKMostDistinctCharacters().find("33312112334", 2);
+        String res = new LongestSubstringWithKMostDistinctCharacters().longestSubstr("aabbcccddd", 2);
         System.out.println(res);
 //        new LongestSubstringWithKMostDistinctCharacters().longestSubstr("aaabbc", 2);
     }
